@@ -1,7 +1,7 @@
 # arnexsds.com
 
 Marketing + compliance website for **Arnex Software Development Services**. Plain
-static HTML/CSS/JS — no build step — designed to be served from GitHub Pages at
+static HTML/CSS/JS with no build step, designed to be served from GitHub Pages at
 `https://arnexsds.com`.
 
 ## Pages

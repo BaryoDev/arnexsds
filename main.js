@@ -1,4 +1,4 @@
-// Arnex Software Development Services — front-end behavior
+// Arnex Software Development Services - front-end behavior
 document.addEventListener('DOMContentLoaded', function () {
   // --- Mobile navigation ---
   var toggle = document.querySelector('.nav-toggle');
