@@ -1,28 +1,11 @@
-<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Arnex">
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Arnex">
   <defs>
-    <clipPath id="ax-hex">
-      <polygon points="55,20 145,20 190,100 145,180 55,180 10,100"/>
-    </clipPath>
-    <pattern id="ax-a" width="40" height="40" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
-      <rect width="20" height="40" fill="#c81d6b"/>
-    </pattern>
-    <pattern id="ax-b" width="40" height="40" patternUnits="userSpaceOnUse" patternTransform="rotate(-35)">
-      <rect width="20" height="40" fill="#1f74c4"/>
-    </pattern>
-    <pattern id="ax-c" width="80" height="80" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
-      <rect x="40" width="8" height="80" fill="#159aa6"/>
-    </pattern>
+    <linearGradient id="ax-g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3b82f6"/>
+      <stop offset="1" stop-color="#1d4ed8"/>
+    </linearGradient>
   </defs>
-
-  <!-- side accent triangles -->
-  <polygon points="8,100 30,84 30,116" fill="#1f74c4"/>
-  <polygon points="192,100 170,84 170,116" fill="#c81d6b"/>
-
-  <!-- woven hexagon: two semi-transparent diagonal weaves cross into purple where they overlap -->
-  <g clip-path="url(#ax-hex)">
-    <rect x="0" y="0" width="200" height="200" fill="#e5e9ef"/>
-    <rect x="0" y="0" width="200" height="200" fill="url(#ax-a)" opacity="0.80"/>
-    <rect x="0" y="0" width="200" height="200" fill="url(#ax-b)" opacity="0.74"/>
-    <rect x="0" y="0" width="200" height="200" fill="url(#ax-c)" opacity="0.55"/>
-  </g>
+  <polygon points="28,9 72,9 94,50 72,91 28,91 6,50" fill="url(#ax-g)"/>
+  <path d="M34 73 L50 29 L66 73" fill="none" stroke="#fff" stroke-width="8.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M40 59 H60" fill="none" stroke="#fff" stroke-width="8.5" stroke-linecap="round"/>
 </svg>
