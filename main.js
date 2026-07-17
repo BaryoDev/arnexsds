@@ -40,32 +40,6 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
   }
 
-  // --- Contact form (Web3Forms) with honeypot + graceful result ---
-  var form = document.getElementById('contact-form');
-  if (form) {
-    form.addEventListener('submit', function (ev) {
-      ev.preventDefault();
-      var status = document.getElementById('form-status');
-      var key = form.getAttribute('data-access-key') || '';
-      // Honeypot: if filled, silently drop (a bot did it)
-      if (form.querySelector('[name="botcheck"]') && form.querySelector('[name="botcheck"]').checked) return;
-      if (!key || key.indexOf('YOUR_') === 0) {
-        if (status) status.textContent = 'Contact form not yet configured. Please email or call us directly using the details on this page.';
-        return;
-      }
-      var data = new FormData(form);
-      data.append('access_key', key);
-      if (status) status.textContent = 'Sending…';
-      fetch('https://api.web3forms.com/submit', { method: 'POST', body: data })
-        .then(function (r) { return r.json(); })
-        .then(function (r) {
-          if (r.success) { form.reset(); if (status) status.textContent = 'Thanks — your message has been sent. We’ll reply shortly.'; }
-          else if (status) status.textContent = 'Sorry, something went wrong. Please email us directly instead.';
-        })
-        .catch(function () { if (status) status.textContent = 'Sorry, something went wrong. Please email us directly instead.'; });
-    });
-  }
-
   // --- Current year in footer ---
   document.querySelectorAll('[data-year]').forEach(function (el) { el.textContent = new Date().getFullYear(); });
 });

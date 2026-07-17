@@ -37,17 +37,19 @@ python3 -m http.server 8080
    - `CNAME` for `www` → `<your-github-username>.github.io`
 5. Back in Settings → Pages, tick **Enforce HTTPS** once the certificate is issued.
 
-## Configure the contact form (anti-spam)
+## Configure the contact form (Typeform)
 
-The form uses [Web3Forms](https://web3forms.com) (free) so submissions email you
-without exposing your address. It also has a honeypot field that silently drops bots.
+The contact page embeds a [Typeform](https://www.typeform.com). The form lives on
+Typeform's domain, so your email never appears on the page, and Typeform handles
+submissions, notifications, and spam filtering.
 
-1. Get a free access key at web3forms.com (enter `arnel.robles@arnexsds.com`).
-2. In `contact.html`, replace `YOUR_WEB3FORMS_ACCESS_KEY` with the key.
+1. Build your form in Typeform and publish it.
+2. Copy the id from its share link: `https://form.typeform.com/to/<ID>`.
+3. In `contact.html`, replace `YOUR_TYPEFORM_ID` in the iframe `src` with `<ID>`.
 
-Until the key is set, the form shows a friendly message asking visitors to email or
-call directly. Your email and phone are **assembled by JavaScript at runtime**, so
-they never appear as plain text in the HTML source for scrapers to harvest.
+Your email and phone are also shown on the contact page, but they are **assembled by
+JavaScript at runtime**, so they never appear as plain text in the HTML source for
+scrapers to harvest.
 
 ## Editing business details
 
